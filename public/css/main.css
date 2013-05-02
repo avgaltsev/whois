@@ -57,8 +57,8 @@ button {
 
 .result {
 	margin-left: 16px;
-	padding-left: 0.5em;
 	margin-bottom: 0.5em;
+	padding-left: 0.5em;
 	font-size: 1.0em;
 }
 
@@ -78,23 +78,17 @@ button {
 }
 
 .result pre {
-	font-size: 0.5em;
+	font-size: 0.6em;
 }
 
-.loading span {
-	
-}
-
-.free span {
-	color: #008000;
-}
-
-.occupied span {
-	color: #800000;
-}
-
-.wrong span {
-	color: #800000;
+.result .expand {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('/images/expand.png');
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	cursor: pointer;
 }
 
 .loading:before {
@@ -111,4 +105,20 @@ button {
 
 .wrong:before {
 	background-image: url('/images/wrong.png');
+}
+
+.loading .query {
+	
+}
+
+.free .query {
+	color: #008000;
+}
+
+.occupied .query {
+	color: #800000;
+}
+
+.wrong .query {
+	color: #800000;
 }
