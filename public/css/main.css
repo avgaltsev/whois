@@ -1,0 +1,103 @@
+body {
+	font-size: 14px;
+}
+
+input {
+	height: 2.5em;
+	border: 1px solid #c0c0c0;
+	border-radius: 0.2em;
+	padding: 0.5em;
+	background-color: #ffffff;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+button {
+	height: 2.5em;
+	border: 1px solid #c0c0c0;
+	border-radius: 0.2em;
+	padding: 0.5em;
+	background-color: #f0f0f0;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#query {
+	border-bottom: 1px solid #c0c0c0;
+	padding: 1.0em;
+	background-color: #e0e0e0;
+}
+
+#query-caption {
+	float: left;
+	margin-right: 0.25em;
+	margin-top: 0.1em;
+	font-size: 2.0em;
+	line-height: 1.0em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#query-submit {
+	float: right;
+	width: 2.5em;
+	margin-left: 0.5em;
+}
+
+#query-input-wrapper {
+	overflow: auto;
+}
+
+#query-input {
+	width: 100%;
+	margin-bottom: 1px;
+}
+
+#log {
+	padding: 1.0em;
+}
+
+.result {
+	margin-left: 16px;
+	padding-left: 0.5em;
+}
+
+.result:before {
+	content: ' ';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: -16px;
+	top: 0.15em;
+	background-repeat: no-repeat;
+}
+
+.loading {
+	color: #808080;
+}
+
+.free {
+	color: #008000;
+}
+
+.occupied {
+	color: #800000;
+}
+
+.wrong {
+	color: #800000;
+}
+
+.loading:before {
+	background-image: url('/images/loading.gif');
+}
+
+.free:before {
+	background-image: url('/images/free.png');
+}
+
+.occupied:before {
+	background-image: url('/images/occupied.png');
+}
+
+.wrong:before {
+	background-image: url('/images/wrong.png');
+}
