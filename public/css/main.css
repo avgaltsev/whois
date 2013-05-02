@@ -58,6 +58,8 @@ button {
 .result {
 	margin-left: 16px;
 	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: 1.0em;
 }
 
 .result:before {
@@ -75,19 +77,23 @@ button {
 	text-decoration: underline;
 }
 
-.loading {
-	color: #808080;
+.result pre {
+	font-size: 0.5em;
 }
 
-.free {
+.loading span {
+	
+}
+
+.free span {
 	color: #008000;
 }
 
-.occupied {
+.occupied span {
 	color: #800000;
 }
 
-.wrong {
+.wrong span {
 	color: #800000;
 }
 
