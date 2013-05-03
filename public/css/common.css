@@ -8,8 +8,8 @@
 	line-height: 1.5em;
 	background: transparent;
 	box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	-khtml-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 }
@@ -33,6 +33,10 @@ button {
 	font-size: 1.0em;
 	color: #404040;
 	vertical-align: middle;
+}
+
+button {
+	cursor: pointer;
 }
 
 h1,
@@ -99,9 +103,22 @@ a:focus {
 }
 
 input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #808080;
+}
+
 input::-moz-placeholder,
 textarea::-moz-placeholder {
+	color: #808080;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #808080;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
 	color: #808080;
 }
 
