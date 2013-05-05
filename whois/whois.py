@@ -16,7 +16,8 @@ def postIndex():
         output = subprocess.check_output(["whois", query])
     
     except Exception as e:
-        output = e.output
+        #output = e.output
+        output = repr(e)
     
     if output in [
         "No whois server is known for this kind of object.\n",
