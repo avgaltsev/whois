@@ -3,8 +3,8 @@
 	var ResultModel = Backbone.Model.extend({
 		
 		defaults: {
-			status: 'processing',
-			whois: '',
+			status: "processing",
+			whois: "",
 			expanded: false
 		},
 		
@@ -16,9 +16,9 @@
 		
 		expand: function () {
 			
-			this.set('expanded', !this.get('expanded'));
+			this.set("expanded", !this.get("expanded"));
 			
-			return this.get('expanded');
+			return this.get("expanded");
 			
 		}
 		
@@ -28,26 +28,26 @@
 		
 		events: {
 			
-			'click .expand': 'expand'
+			"click .expand": "expand"
 			
 		},
 		
 		initialize: function () {
 			
-			this.listenTo(this.model, 'change', this.render);
+			this.listenTo(this.model, "change", this.render);
 			
 		},
 		
 		render: function () {
 			
-			var query = this.model.get('query'),
-				status = this.model.get('status'),
-				whois = this.model.get('whois');
+			var query = this.model.get("query"),
+				status = this.model.get("status"),
+				whois = this.model.get("whois");
 			
-			this.$el.attr('class', 'result ' + status);
+			this.$el.attr("class", "result " + status);
 			
-			this.$el.html(_.template($('#template-result').html(), {
-				query: (status === 'occupied') ? ('<a href="http://' + query + '">' + query + '</a>') : query,
+			this.$el.html(_.template($("#template-result").html(), {
+				query: (status === "occupied") ? ("<a href=\"http://" + query + "\">" + query + "</a>") : query,
 				whois: whois
 			}));
 			
@@ -58,9 +58,9 @@
 		expand: function () {
 			
 			if (this.model.expand()) {
-				this.$('.whois').addClass('visible');
+				this.$(".whois").addClass("visible");
 			} else {
-				this.$('.whois').removeClass('visible');
+				this.$(".whois").removeClass("visible");
 			}
 			
 		}
@@ -69,16 +69,16 @@
 	
 	var QueryView = Backbone.View.extend({
 		
-		el: '#query',
+		el: "#query",
 		
 		events: {
-			'click #query-submit': 'submitQuery',
-			'keypress #query-input': 'inputQuery'
+			"click #query-submit": "submitQuery",
+			"keypress #query-input": "inputQuery"
 		},
 		
 		initialize: function () {
 			
-			this.$inputEl = this.$('#query-input');
+			this.$inputEl = this.$("#query-input");
 			
 		},
 		
@@ -93,18 +93,23 @@
 				});
 				
 				$.ajax({
-					url: 'test.json',
+					url: "/whois/",
+					type: "POST",
+					dataType: "json",
+					data: {
+						query: query
+					},
 					success: function (data) {
 						resultModel.set({
-							'status': data.status,
-							'whois': data.whois
+							"status": data.status,
+							"whois": data.whois
 						});
 					}
 				});
 				
 			}
 			
-			this.$inputEl.val('');
+			this.$inputEl.val("");
 			
 		},
 		
@@ -120,7 +125,7 @@
 	
 	var LogView = Backbone.View.extend({
 		
-		el: '#log',
+		el: "#log",
 		
 		addResult: function (resultModel) {
 			

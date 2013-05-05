@@ -110,11 +110,9 @@ button:active {
 	background-repeat: no-repeat;
 }
 
-.processing .expand,
-.free .expand,
-.wrong .expand {
-	display: none;
-}
+/*.occupied .expand {
+	display: inline-block;
+}*/
 
 .result .expand:active {
 	box-shadow: none;
