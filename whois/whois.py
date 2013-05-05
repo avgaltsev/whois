@@ -1,10 +1,10 @@
 import os, subprocess, re, json
 from bottle import get, post, request, run, default_app
 
-@get("/")
+@get("/whois/")
 def getIndex():
    
-   pass
+   return "Hello"
 
 
 @post("/whois/")
