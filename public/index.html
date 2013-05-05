@@ -11,7 +11,18 @@
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/main.css">
 		
+		<script src="lib/jquery.js"></script>
+		<script src="lib/underscore.js"></script>
+		<script src="lib/backbone.js"></script>
+		
 		<script src="js/main.js"></script>
+		
+		<script id="template-result" type="text/template">
+			
+			<span class="query"><%=query%></span><button class="expand"></button>
+			<pre class="whois"><%=whois%></pre>
+			
+		</script>
 		
 	</head>
 	
@@ -23,11 +34,11 @@
 				
 				<div id="query-caption">Whois</div>
 				
-				<button id="query-submit">?</button>
+				<button id="query-submit" tabindex="2">?</button>
 				
 				<div id="query-input-wrapper">
 					
-					<input id="query-input" type="text" placeholder="example.com" autofocus>
+					<input id="query-input" type="text" placeholder="example.com" autofocus tabindex="1">
 					
 				</div>
 				
@@ -35,45 +46,7 @@
 			
 		</div>
 		
-		<div id="log">
-			
-			<div class="result processing">
-				<span class="query">test0.com</span>
-			</div>
-			
-			<div class="result free">
-				<span class="query">test.com</span>
-			</div>
-			
-			<div class="result occupied">
-				<span class="query"><a href="http://test2.com">test2.com</a></span>
-				<button class="expand"></button>
-				<pre class="whois">% By submitting a query to RIPN's Whois Service
-% you agree to abide by the following terms of use:
-% http://www.ripn.net/about/servpol.html#3.2 (in Russian) 
-% http://www.ripn.net/about/en/servpol.html#3.2 (in English).
-
-domain:        MAAKROS.RU
-nserver:       dns1.yandex.ru.
-nserver:       dns2.yandex.ru.
-state:         REGISTERED, DELEGATED, UNVERIFIED
-person:        Private Person
-registrar:     RU-CENTER-REG-RIPN
-admin-contact: https://www.nic.ru/whois
-created:       2010.03.16
-paid-till:     2014.03.16
-free-date:     2014.04.16
-source:        TCI
-
-Last updated on 2013.05.02 23:26:30 MSK
-</pre>
-			</div>
-			
-			<div class="result wrong">
-				<span class="query">test3.com</span>
-			</div>
-			
-		</div>
+		<div id="log"></div>
 		
 	</body>
 	
