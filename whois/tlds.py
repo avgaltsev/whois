@@ -5,10 +5,18 @@ _patterns = {
     
     "com": "No match for \"[^\"]+\"\.",
     "org": "NOT FOUND",
+    
+    "int": "% You queried for [^\s]+ but this server does not have",
+    
     "biz": "Not found: .+",
     "cat": "% Object \"[^\"]+\" NOT FOUND\.",
     "coop": "No domain records were found to match \"[^\"]+\"",
     "name": "No match\.",
+    
+    "de": "Status: free",
+    "fr": "%% No entries found in the AFNIC Database\.",
+    "it": "Status:             AVAILABLE",
+    "li": "We do not have an entry in our database matching your query\.",
     "ru": "No entries found for the selected source\(s\)\.",
     
 }
@@ -49,7 +57,7 @@ _tokens = {
 
     #"edu": "",
     #"gov": "",
-    #"int": "",
+    "int": _patterns["int"],
     #"mil": "",
 
     #"e164.arpa": "",
@@ -57,16 +65,16 @@ _tokens = {
     #"arpa": "",
 
     "aero": _patterns["org"],
-    "asia": _patterns["org"],
+    "asia": _patterns["org"], #!
     "biz": _patterns["biz"],
     "cat": _patterns["cat"],
     "coop": _patterns["coop"],
     "info": _patterns["org"],
     "jobs": _patterns["com"],
-    "mobi": _patterns["org"],
+    "mobi": _patterns["org"], #!
     "museum": _patterns["cat"],
     "name": _patterns["name"],
-    "post": _patterns["org"],
+    "post": _patterns["org"], #!
     "pro": _patterns["org"],
     "tel": _patterns["biz"],
     "travel": _patterns["biz"],
@@ -134,7 +142,7 @@ _tokens = {
     #"cx": "",
     #"cy": "",
     #"cz": "",
-    #"de": "",
+    "de": _patterns["de"],
     #"dj": "",
     #"dk": "",
     #"dm": "",
@@ -153,7 +161,7 @@ _tokens = {
     #"fk": "",
     #"fm": "",
     #"fo": "",
-    #"fr": "",
+    "fr": _patterns["fr"],
     #"ga": "",
     #"gb": "",
     #"gd": "",
@@ -188,7 +196,7 @@ _tokens = {
     #"iq": "",
     #"ir": "",
     #"is": "",
-    #"it": "",
+    "it": _patterns["it"],
     #"je": "",
     #"jm": "",
     #"jo": "",
@@ -207,7 +215,7 @@ _tokens = {
     #"la": "",
     #"lb": "",
     #"lc": "",
-    #"li": "",
+    "li": _patterns["li"],
     #"lk": "",
     #"lr": "",
     #"ls": "",
@@ -309,7 +317,7 @@ _tokens = {
     #"tp": "",
     #"tr": "",
     #"tt": "",
-    #"tv": "",
+    "tv": _patterns["com"],
     #"tw": "",
     #"tz": "",
     #"biz.ua": "",
