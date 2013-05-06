@@ -130,8 +130,8 @@ button:active {
 	background-image: url('/images/occupied.png');
 }
 
-.wrong:before {
-	background-image: url('/images/wrong.png');
+.unrecognized:before {
+	background-image: url('/images/unrecognized.png');
 }
 
 .processing .query {
@@ -146,6 +146,6 @@ button:active {
 	color: #800000;
 }
 
-.wrong .query {
+.unrecognized .query {
 	color: #800000;
 }
