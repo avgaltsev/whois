@@ -10,7 +10,11 @@ def getIndex():
 @post("/whois/")
 def postIndex():
     
-    query = request.forms.get("query")
+    match = re.match("[a-zA-Z0-9\-\.]+", request.forms.get("query"))
+    
+    query = match.group(0) if match else ""
+    
+    tld = query.split(".")[-1]
     
     try:
         output = subprocess.check_output(["whois", query])
@@ -18,14 +22,27 @@ def postIndex():
     except Exception as e:
         output = e.output
     
-    if output in [
-        "No whois server is known for this kind of object.\n",
-        "This TLD has no whois server.\n"
-    ]:
-        status = "wrong"
+    def com(output):
+        return "free" if re.search("No match for", output) else "occupied"
     
-    else:
-        status = "occupied"
+    def org(output):
+        return "free" if re.search("NOT FOUND", output) else "occupied"
+    
+    def ru(output):
+        return "free" if re.search("No entries found for the selected source", output) else "occupied"
+    
+    def default(output):
+        return "wrong"
+    
+    functions = {
+        "com": com,
+        "net": com,
+        "org": org,
+        "me": org,
+        "ru": ru
+    }
+    
+    status = functions.get(tld, default)(output)
     
     whois = output
     
@@ -33,10 +50,6 @@ def postIndex():
         "status": status,
         "whois": whois
     })
-    
-    #return json.dumps({
-    #    "status": "free"
-    #})
 
 
 if __name__ == '__main__':
