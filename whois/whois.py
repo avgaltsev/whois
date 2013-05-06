@@ -1,4 +1,4 @@
-import subprocess, re, json
+import subprocess, re, json, datetime
 
 from bottle import post, request, run, default_app
 
@@ -11,10 +11,9 @@ def log(function):
         
         status = function(*args, **kwargs)
         
-        if status == "free":
-            file = open("whois.log", "a")
-            file.write(args[0] + "\n")
-            file.close
+        file = open("whois.log", "a")
+        file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " " + args[0] + "\n")
+        file.close
         
         return status
     
