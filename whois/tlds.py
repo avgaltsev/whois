@@ -1,6 +1,19 @@
 import re
 
 
+_patterns = {
+    
+    "com": "No match for \"[^\"]+\"\.",
+    "org": "NOT FOUND",
+    "biz": "Not found: .+",
+    "cat": "% Object \"[^\"]+\" NOT FOUND\.",
+    "coop": "No domain records were found to match \"[^\"]+\"",
+    "name": "No match\.",
+    "ru": "No entries found for the selected source\(s\)\.",
+    
+}
+
+
 _tokens = {
     
     #"br.com": "",
@@ -25,14 +38,14 @@ _tokens = {
     #"jpn.com": "",
     #"web.com": "",
 
-    "com": "No match for \"[^\"]+\"\.",
+    "com": _patterns["com"],
 
     #"za.net": "",
-    "net": "No match for \"[^\"]+\"\.",
+    "net": _patterns["com"],
 
     #"eu.org": "",
     #"za.org": "",
-    "org": "NOT FOUND",
+    "org": _patterns["org"],
 
     #"edu": "",
     #"gov": "",
@@ -43,21 +56,21 @@ _tokens = {
     #"in-addr.arpa": "",
     #"arpa": "",
 
-    "aero": "NOT FOUND",
-    "asia": "NOT FOUND",
-    "biz": "Not found: .+",
-    "cat": "% Object \"[^\"]+\" NOT FOUND\.",
-    "coop": "No domain records were found to match \"[^\"]+\"",
-    "info": "NOT FOUND",
-    "jobs": "No match for \"[^\"]+\"\.",
-    "mobi": "NOT FOUND",
-    "museum": "% Object \"[^\"]+\" NOT FOUND\.",
-    "name": "No match\.",
-    "post": "NOT FOUND",
-    "pro": "NOT FOUND",
-    "tel": "Not found: .+",
-    "travel": "Not found: .+",
-    "xxx": "NOT FOUND",
+    "aero": _patterns["org"],
+    "asia": _patterns["org"],
+    "biz": _patterns["biz"],
+    "cat": _patterns["cat"],
+    "coop": _patterns["coop"],
+    "info": _patterns["org"],
+    "jobs": _patterns["com"],
+    "mobi": _patterns["org"],
+    "museum": _patterns["cat"],
+    "name": _patterns["name"],
+    "post": _patterns["org"],
+    "pro": _patterns["org"],
+    "tel": _patterns["biz"],
+    "travel": _patterns["biz"],
+    "xxx": _patterns["org"],
 
     #"ac": "",
     #"ad": "",
@@ -101,7 +114,7 @@ _tokens = {
     #"bz": "",
     #"co.ca": "",
     #"ca": "",
-    #"cc": "",
+    "cc": _patterns["com"],
     #"cd": "",
     #"cf": "",
     #"cg": "",
@@ -258,7 +271,7 @@ _tokens = {
     #"ro": "",
     #"rs": "",
     #"edu.ru": "",
-    #"ru": "",
+    "ru": _patterns["ru"],
     #"rw": "",
     #"sa": "",
     #"sb": "",
@@ -277,7 +290,7 @@ _tokens = {
     #"sr": "",
     #"ss": "",
     #"st": "",
-    #"su": "",
+    "su": _patterns["ru"],
     #"sv": "",
     #"sx": "",
     #"sy": "",
