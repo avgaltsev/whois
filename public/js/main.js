@@ -1,4 +1,5 @@
-(function (window, document, $, _, Backbone, Mustache) {
+(function (window, document, $, _, Backbone) {
+	
 	
 	var ResultModel = Backbone.Model.extend({
 		
@@ -23,6 +24,7 @@
 		}
 		
 	});
+	
 	
 	var ResultView = Backbone.View.extend({
 		
@@ -66,6 +68,7 @@
 		}
 		
 	});
+	
 	
 	var QueryView = Backbone.View.extend({
 		
@@ -123,6 +126,7 @@
 		
 	});
 	
+	
 	var LogView = Backbone.View.extend({
 		
 		el: "#log",
@@ -139,6 +143,7 @@
 		
 	});
 	
+	
 	$(function () {
 		
 		window.app = {};
@@ -149,4 +154,5 @@
 		
 	});
 	
-})(this, this.document, this.$, this._, this.Backbone, this.Mustache);
+	
+})(this, this.document, this.$, this._, this.Backbone);
