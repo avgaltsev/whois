@@ -12,7 +12,7 @@ def log(function):
         status = function(*args, **kwargs)
         
         file = open("whois.log", "a")
-        file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " " + args[0] + "\n")
+        file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " " + status + " " + args[0] + "\n")
         file.close
         
         return status
@@ -25,7 +25,7 @@ def postIndex():
     
     match = re.match("[a-zA-Z0-9\-\.]+", request.forms.get("query"))
     
-    domain = match.group(0) if match else ""
+    domain = match.group(0).lower() if match else ""
     
     try:
         whois = subprocess.check_output(["whois", domain])
