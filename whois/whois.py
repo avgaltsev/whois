@@ -23,7 +23,7 @@ def log(function):
 @post("/whois/")
 def postIndex():
     
-    match = re.match("[a-zA-Z0-9\-\.]+", request.forms.get("query"))
+    match = re.match("^[a-zA-Z0-9\-\.]+$", request.forms.get("query"))
     
     domain = match.group(0).lower() if match else ""
     
