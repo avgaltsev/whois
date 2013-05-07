@@ -20,7 +20,7 @@ html {
 
 body {
 	height: 100%;
-	font-family: sans-serif;
+	font-family: tahoma, arial, sans-serif;
 	font-size: 14px;
 	color: #404040;
 	background-color: #ffffff;
@@ -104,22 +104,26 @@ a:focus {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-	color: #808080;
+	color: inherit;
+	opacity: 0.5;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-	color: #808080;
+	color: inherit;
+	opacity: 0.5;
 }
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-	color: #808080;
+	color: inherit;
+	opacity: 0.5;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-	color: #808080;
+	color: inherit;
+	opacity: 0.5;
 }
 
 .clearfix:after {
