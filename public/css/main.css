@@ -92,6 +92,7 @@ button:active {
 
 .result .whois {
 	display: none;
+	max-width: 100%;
 	font-size: 0.7em;
 }
 
